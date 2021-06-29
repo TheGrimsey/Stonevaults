@@ -8,6 +8,7 @@ import net.fabricmc.fabric.api.structure.v1.FabricStructureBuilder;
 import net.minecraft.util.Identifier;
 import net.minecraft.util.registry.BuiltinRegistries;
 import net.minecraft.util.registry.Registry;
+import net.minecraft.world.biome.Biome;
 import net.minecraft.world.gen.GenerationStep;
 import net.minecraft.world.gen.chunk.StructureConfig;
 import net.minecraft.world.gen.feature.ConfiguredStructureFeature;
@@ -42,7 +43,7 @@ public class StonevaultStructures {
         Registry.register(BuiltinRegistries.CONFIGURED_STRUCTURE_FEATURE, configured_identifier, configuredStructureFeature);
 
         // Add to generation
-        Predicate<BiomeSelectionContext> biomes = BiomeSelectors.foundInOverworld();
+        Predicate<BiomeSelectionContext> biomes = BiomeSelectors.foundInOverworld().and(BiomeSelectors.categories(Biome.Category.BEACH, Biome.Category.OCEAN).negate());
 
         // Add structures to biomes.
         BiomeModifications.create(identifier)
