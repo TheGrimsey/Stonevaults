@@ -6,7 +6,34 @@
       "weight": 3,
       "element": {
         "location": "stonevaults:magetower/sidetower/bedroom",
-        "processors": "minecraft:empty",
+        "processors": "stonevaults:decayer",
+        "projection": "rigid",
+        "element_type": "minecraft:single_pool_element"
+      }
+    },
+    {
+      "weight": 3,
+      "element": {
+        "location": "stonevaults:magetower/sidetower/walkway",
+        "processors": "stonevaults:decayer",
+        "projection": "rigid",
+        "element_type": "minecraft:single_pool_element"
+      }
+    },
+    {
+      "weight": 3,
+      "element": {
+        "location": "stonevaults:magetower/sidetower/walkway_continuing",
+        "processors": "stonevaults:decayer",
+        "projection": "rigid",
+        "element_type": "minecraft:single_pool_element"
+      }
+    },
+    {
+      "weight": 3,
+      "element": {
+        "location": "stonevaults:magetower/sidetower/storage",
+        "processors": "stonevaults:decayer",
         "projection": "rigid",
         "element_type": "minecraft:single_pool_element"
       }

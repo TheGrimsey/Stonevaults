@@ -6,7 +6,7 @@
       "weight": 5,
       "element": {
         "location": "stonevaults:magetower/balconies/stonebrickwall",
-        "processors": "minecraft:empty",
+        "processors": "stonevaults:decayer",
         "projection": "rigid",
         "element_type": "minecraft:single_pool_element"
       }
@@ -15,7 +15,7 @@
       "weight": 10,
       "element": {
         "location": "stonevaults:magetower/balconies/none",
-        "processors": "minecraft:empty",
+        "processors": "stonevaults:decayer",
         "projection": "rigid",
         "element_type": "minecraft:single_pool_element"
       }
@@ -24,7 +24,25 @@
       "weight": 1,
       "element": {
         "location": "stonevaults:magetower/balconies/walkway_to_sidetower",
-        "processors": "minecraft:empty",
+        "processors": "stonevaults:decayer",
+        "projection": "rigid",
+        "element_type": "minecraft:single_pool_element"
+      }
+    },
+    {
+      "weight": 1,
+      "element": {
+        "location": "stonevaults:magetower/balconies/french",
+        "processors": "stonevaults:decayer",
+        "projection": "rigid",
+        "element_type": "minecraft:single_pool_element"
+      }
+    },
+    {
+      "weight": 1,
+      "element": {
+        "location": "stonevaults:magetower/balconies/ironwindow",
+        "processors": "stonevaults:decayer",
         "projection": "rigid",
         "element_type": "minecraft:single_pool_element"
       }

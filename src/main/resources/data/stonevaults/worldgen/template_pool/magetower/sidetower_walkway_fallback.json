@@ -1,11 +1,11 @@
 {
-  "name": "stoenvaults:startpool_magetower",
+  "name": "stonevaults:magetower/sidetower_walkway_fallback",
   "fallback": "minecraft:empty",
   "elements": [
     {
       "weight": 3,
       "element": {
-        "location": "stonevaults:magetower/entrance",
+        "location": "stonevaults:magetower/sidetower/walkway_fallback",
         "processors": "stonevaults:decayer",
         "projection": "rigid",
         "element_type": "minecraft:single_pool_element"
