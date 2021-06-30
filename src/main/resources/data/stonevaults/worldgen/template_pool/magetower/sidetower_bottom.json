@@ -1,0 +1,15 @@
+{
+  "name": "stonevaults:magetower/sidetower_bottom",
+  "fallback": "stonevaults:magetower/sidetower_bottom",
+  "elements": [
+    {
+      "weight": 3,
+      "element": {
+        "location": "stonevaults:magetower/sidetower/entrance_01",
+        "processors": "minecraft:empty",
+        "projection": "rigid",
+        "element_type": "minecraft:single_pool_element"
+      }
+    }
+  ]
+}

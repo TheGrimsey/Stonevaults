@@ -3,7 +3,7 @@
   "fallback": "stonevaults:magetower/balconies",
   "elements": [
     {
-      "weight": 1,
+      "weight": 5,
       "element": {
         "location": "stonevaults:magetower/balconies/stonebrickwall",
         "processors": "minecraft:empty",
@@ -12,9 +12,18 @@
       }
     },
     {
-      "weight": 5,
+      "weight": 10,
       "element": {
         "location": "stonevaults:magetower/balconies/none",
+        "processors": "minecraft:empty",
+        "projection": "rigid",
+        "element_type": "minecraft:single_pool_element"
+      }
+    },
+    {
+      "weight": 1,
+      "element": {
+        "location": "stonevaults:magetower/balconies/walkway_to_sidetower",
         "processors": "minecraft:empty",
         "projection": "rigid",
         "element_type": "minecraft:single_pool_element"
