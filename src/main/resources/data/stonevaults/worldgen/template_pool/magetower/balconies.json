@@ -12,7 +12,7 @@
       }
     },
     {
-      "weight": 10,
+      "weight": 5,
       "element": {
         "location": "stonevaults:magetower/balconies/none",
         "processors": "stonevaults:decayer",
@@ -21,7 +21,7 @@
       }
     },
     {
-      "weight": 1,
+      "weight": 3,
       "element": {
         "location": "stonevaults:magetower/balconies/walkway_to_sidetower",
         "processors": "stonevaults:decayer",
@@ -30,7 +30,7 @@
       }
     },
     {
-      "weight": 1,
+      "weight": 5,
       "element": {
         "location": "stonevaults:magetower/balconies/french",
         "processors": "stonevaults:decayer",
@@ -39,7 +39,7 @@
       }
     },
     {
-      "weight": 1,
+      "weight": 4,
       "element": {
         "location": "stonevaults:magetower/balconies/ironwindow",
         "processors": "stonevaults:decayer",

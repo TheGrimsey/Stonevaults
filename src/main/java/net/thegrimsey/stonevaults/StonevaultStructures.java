@@ -25,10 +25,10 @@ public class StonevaultStructures {
 
     public static void registerStructures()
     {
-        registerStructure("magetower", MAGETOWER, CONFIGURED_MAGETOWER, new StructureConfig(20, 10, 383209018));
+        registerStructure("magetower", MAGETOWER, CONFIGURED_MAGETOWER, BiomeSelectors.foundInOverworld().and(BiomeSelectors.categories(Biome.Category.FOREST, Biome.Category.JUNGLE).negate()), new StructureConfig(20, 10, 383209018));
     }
 
-    static void registerStructure(String Id, StructureFeature<DefaultFeatureConfig> structureFeature, ConfiguredStructureFeature<?, ?> configuredStructureFeature, StructureConfig structureConfig)
+    static void registerStructure(String Id, StructureFeature<DefaultFeatureConfig> structureFeature, ConfiguredStructureFeature<?, ?> configuredStructureFeature, Predicate<BiomeSelectionContext> biomes, StructureConfig structureConfig)
     {
         Identifier identifier = new Identifier(Stonevaults.MODID, Id);
         Identifier configured_identifier = new Identifier(Stonevaults.MODID, "configured_" + Id);
@@ -41,9 +41,6 @@ public class StonevaultStructures {
                 .register();
 
         Registry.register(BuiltinRegistries.CONFIGURED_STRUCTURE_FEATURE, configured_identifier, configuredStructureFeature);
-
-        // Add to generation
-        Predicate<BiomeSelectionContext> biomes = BiomeSelectors.foundInOverworld().and(BiomeSelectors.categories(Biome.Category.BEACH, Biome.Category.OCEAN).negate());
 
         // Add structures to biomes.
         BiomeModifications.create(identifier)

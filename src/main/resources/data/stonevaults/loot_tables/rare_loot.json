@@ -101,6 +101,30 @@
           "type": "minecraft:item",
           "name": "minecraft:experience_bottle",
           "weight": 2
+        },
+        {
+          "type": "minecraft:item",
+          "weight": 1,
+          "functions": [
+            {
+              "function": "minecraft:enchant_with_levels",
+              "levels": 30,
+              "treasure": true
+            }
+          ],
+          "name": "minecraft:book"
+        },
+        {
+          "type": "minecraft:item",
+          "weight": 2,
+          "functions": [
+            {
+              "function": "minecraft:enchant_with_levels",
+              "levels": 10,
+              "treasure": true
+            }
+          ],
+          "name": "minecraft:book"
         }
       ]
     }

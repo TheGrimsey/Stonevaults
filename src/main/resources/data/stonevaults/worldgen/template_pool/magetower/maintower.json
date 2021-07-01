@@ -12,7 +12,7 @@
       }
     },
     {
-      "weight": 5,
+      "weight": 10,
       "element": {
         "location": "stonevaults:magetower/floors/library",
         "processors": "stonevaults:decayer",
@@ -21,7 +21,7 @@
       }
     },
     {
-      "weight": 5,
+      "weight": 10,
       "element": {
         "location": "stonevaults:magetower/floors/barracks",
         "processors": "stonevaults:decayer",
@@ -30,16 +30,7 @@
       }
     },
     {
-      "weight": 2,
-      "element": {
-        "location": "stonevaults:magetower/floors/alchemy",
-        "processors": "stonevaults:decayer",
-        "projection": "rigid",
-        "element_type": "minecraft:single_pool_element"
-      }
-    },
-    {
-      "weight": 5,
+      "weight": 10,
       "element": {
         "location": "stonevaults:magetower/floors/archers",
         "processors": "stonevaults:decayer",
@@ -48,7 +39,16 @@
       }
     },
     {
-      "weight": 4,
+      "weight": 10,
+      "element": {
+        "location": "stonevaults:magetower/floors/alchemy",
+        "processors": "stonevaults:decayer",
+        "projection": "rigid",
+        "element_type": "minecraft:single_pool_element"
+      }
+    },
+    {
+      "weight": 10,
       "element": {
         "location": "stonevaults:magetower/floors/iron_golem",
         "processors": "stonevaults:decayer",
@@ -57,36 +57,9 @@
       }
     },
     {
-      "weight": 3,
+      "weight": 10,
       "element": {
         "location": "stonevaults:magetower/floors/trap",
-        "processors": "stonevaults:decayer",
-        "projection": "rigid",
-        "element_type": "minecraft:single_pool_element"
-      }
-    },
-    {
-      "weight": 1,
-      "element": {
-        "location": "stonevaults:magetower/floors/tinymaintower",
-        "processors": "stonevaults:decayer",
-        "projection": "rigid",
-        "element_type": "minecraft:single_pool_element"
-      }
-    },
-    {
-      "weight": 2,
-      "element": {
-        "location": "stonevaults:magetower/floors/rainbow",
-        "processors": "stonevaults:decayer",
-        "projection": "rigid",
-        "element_type": "minecraft:single_pool_element"
-      }
-    },
-    {
-      "weight": 2,
-      "element": {
-        "location": "stonevaults:magetower/floors/dark_altar",
         "processors": "stonevaults:decayer",
         "projection": "rigid",
         "element_type": "minecraft:single_pool_element"
@@ -102,9 +75,63 @@
       }
     },
     {
+      "weight": 2,
+      "element": {
+        "location": "stonevaults:magetower/floors/tinymaintower",
+        "processors": "stonevaults:decayer",
+        "projection": "rigid",
+        "element_type": "minecraft:single_pool_element"
+      }
+    },
+    {
+      "weight": 4,
+      "element": {
+        "location": "stonevaults:magetower/floors/rainbow",
+        "processors": "stonevaults:decayer",
+        "projection": "rigid",
+        "element_type": "minecraft:single_pool_element"
+      }
+    },
+    {
+      "weight": 4,
+      "element": {
+        "location": "stonevaults:magetower/floors/piglin",
+        "processors": "stonevaults:decayer",
+        "projection": "rigid",
+        "element_type": "minecraft:single_pool_element"
+      }
+    },
+    {
+      "weight": 4,
+      "element": {
+        "location": "stonevaults:magetower/floors/nether",
+        "processors": "stonevaults:decayer",
+        "projection": "rigid",
+        "element_type": "minecraft:single_pool_element"
+      }
+    },
+    {
+      "weight": 10,
+      "element": {
+        "location": "stonevaults:magetower/floors/dark_altar",
+        "processors": "stonevaults:decayer",
+        "projection": "rigid",
+        "element_type": "minecraft:single_pool_element"
+      }
+    },
+    {
       "weight": 1,
       "element": {
         "location": "stonevaults:magetower/roofs/wooden",
+        "processors": "stonevaults:decayer",
+        "projection": "rigid",
+        "element_type": "minecraft:single_pool_element"
+      }
+    },
+    {
+      "weight": 1,
+      "element": {
+        "location": "stonevaults:magetower/roofs/arches",
         "processors": "stonevaults:decayer",
         "projection": "rigid",
         "element_type": "minecraft:single_pool_element"

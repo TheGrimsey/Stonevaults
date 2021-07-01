@@ -1,0 +1,24 @@
+{
+  "name": "stonevaults:magetower/sidetower_roofs",
+  "fallback": "minecraft:empty",
+  "elements": [
+    {
+      "weight": 1,
+      "element": {
+        "location": "stonevaults:magetower/sidetower/roofs/pointy",
+        "processors": "stonevaults:decayer",
+        "projection": "rigid",
+        "element_type": "minecraft:single_pool_element"
+      }
+    },
+    {
+      "weight": 1,
+      "element": {
+        "location": "stonevaults:magetower/sidetower/roofs/half_ship",
+        "processors": "stonevaults:decayer",
+        "projection": "rigid",
+        "element_type": "minecraft:single_pool_element"
+      }
+    }
+  ]
+}

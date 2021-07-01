@@ -1,9 +1,9 @@
 {
   "name": "stonevaults:magetower/sidetower",
-  "fallback": "minecraft:empty",
+  "fallback": "stonevaults:magetower/sidetower_roofs",
   "elements": [
     {
-      "weight": 3,
+      "weight": 7,
       "element": {
         "location": "stonevaults:magetower/sidetower/bedroom",
         "processors": "stonevaults:decayer",
@@ -12,7 +12,7 @@
       }
     },
     {
-      "weight": 3,
+      "weight": 7,
       "element": {
         "location": "stonevaults:magetower/sidetower/walkway",
         "processors": "stonevaults:decayer",
@@ -21,7 +21,7 @@
       }
     },
     {
-      "weight": 3,
+      "weight": 7,
       "element": {
         "location": "stonevaults:magetower/sidetower/walkway_continuing",
         "processors": "stonevaults:decayer",
@@ -30,9 +30,36 @@
       }
     },
     {
-      "weight": 3,
+      "weight": 7,
       "element": {
         "location": "stonevaults:magetower/sidetower/storage",
+        "processors": "stonevaults:decayer",
+        "projection": "rigid",
+        "element_type": "minecraft:single_pool_element"
+      }
+    },
+    {
+      "weight": 7,
+      "element": {
+        "location": "stonevaults:magetower/sidetower/ruin",
+        "processors": "stonevaults:decayer",
+        "projection": "rigid",
+        "element_type": "minecraft:single_pool_element"
+      }
+    },
+    {
+      "weight": 1,
+      "element": {
+        "location": "stonevaults:magetower/sidetower/roofs/pointy",
+        "processors": "stonevaults:decayer",
+        "projection": "rigid",
+        "element_type": "minecraft:single_pool_element"
+      }
+    },
+    {
+      "weight": 1,
+      "element": {
+        "location": "stonevaults:magetower/sidetower/roofs/half_ship",
         "processors": "stonevaults:decayer",
         "projection": "rigid",
         "element_type": "minecraft:single_pool_element"
