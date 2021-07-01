@@ -8,5 +8,6 @@ public class Stonevaults implements ModInitializer {
 	@Override
 	public void onInitialize() {
 		StonevaultStructures.registerStructures();
+		StonevaultsProcessors.registerProcessors();
 	}
 }
