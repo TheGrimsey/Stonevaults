@@ -15,6 +15,7 @@ import net.minecraft.world.gen.feature.ConfiguredStructureFeature;
 import net.minecraft.world.gen.feature.DefaultFeatureConfig;
 import net.minecraft.world.gen.feature.FeatureConfig;
 import net.minecraft.world.gen.feature.StructureFeature;
+import net.thegrimsey.stonevaults.structures.IglooStructure;
 import net.thegrimsey.stonevaults.structures.MageTowerStructure;
 
 import java.util.function.Predicate;
@@ -23,9 +24,13 @@ public class StonevaultStructures {
     static final StructureFeature<DefaultFeatureConfig> MAGETOWER = new MageTowerStructure(DefaultFeatureConfig.CODEC);
     static ConfiguredStructureFeature<?, ?> CONFIGURED_MAGETOWER = StonevaultStructures.MAGETOWER.configure(DefaultFeatureConfig.DEFAULT);
 
+    static final StructureFeature<DefaultFeatureConfig> IGLOO = new IglooStructure(DefaultFeatureConfig.CODEC);
+    static ConfiguredStructureFeature<?, ?> CONFIGURED_IGLOO = StonevaultStructures.IGLOO.configure(DefaultFeatureConfig.DEFAULT);
+
     public static void registerStructures()
     {
-        registerStructure("magetower", MAGETOWER, CONFIGURED_MAGETOWER, BiomeSelectors.foundInOverworld().and(BiomeSelectors.categories(Biome.Category.FOREST, Biome.Category.JUNGLE).negate()), new StructureConfig(20, 10, 383209018));
+        registerStructure("magetower", MAGETOWER, CONFIGURED_MAGETOWER, BiomeSelectors.foundInOverworld().and(BiomeSelectors.categories(Biome.Category.FOREST, Biome.Category.JUNGLE)), new StructureConfig(20, 10, 383209018));
+        registerStructure("igloo", IGLOO, CONFIGURED_IGLOO, BiomeSelectors.foundInOverworld().and(BiomeSelectors.categories(Biome.Category.ICY, Biome.Category.TAIGA)), new StructureConfig(20, 10, 38419));
     }
 
     static void registerStructure(String Id, StructureFeature<DefaultFeatureConfig> structureFeature, ConfiguredStructureFeature<?, ?> configuredStructureFeature, Predicate<BiomeSelectionContext> biomes, StructureConfig structureConfig)
