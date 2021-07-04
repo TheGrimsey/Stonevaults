@@ -6,7 +6,7 @@
       "weight": 3,
       "element": {
         "location": "stonevaults:igloo/igloo",
-        "processors": "minecraft:empty",
+        "processors": "stonevaults:icer",
         "projection": "rigid",
         "element_type": "minecraft:single_pool_element"
       }
