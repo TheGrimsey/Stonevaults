@@ -1,12 +1,48 @@
 {
-  "name": "stoenvaults:startpool_igloo",
+  "name": "stoenvaults:dungeon/dungeon_rooms",
   "fallback": "minecraft:empty",
   "elements": [
     {
       "weight": 3,
       "element": {
-        "location": "stonevaults:igloo/igloo",
-        "processors": "stonevaults:icer",
+        "location": "stonevaults:dungeon/rooms/lava_trap",
+        "processors": "stonevaults:dungeon",
+        "projection": "rigid",
+        "element_type": "minecraft:single_pool_element"
+      }
+    },
+    {
+      "weight": 3,
+      "element": {
+        "location": "stonevaults:dungeon/rooms/lava_parkour",
+        "processors": "stonevaults:dungeon",
+        "projection": "rigid",
+        "element_type": "minecraft:single_pool_element"
+      }
+    },
+    {
+      "weight": 3,
+      "element": {
+        "location": "stonevaults:dungeon/rooms/library",
+        "processors": "stonevaults:dungeon",
+        "projection": "rigid",
+        "element_type": "minecraft:single_pool_element"
+      }
+    },
+    {
+      "weight": 3,
+      "element": {
+        "location": "stonevaults:dungeon/rooms/skeleton_trap",
+        "processors": "stonevaults:dungeon",
+        "projection": "rigid",
+        "element_type": "minecraft:single_pool_element"
+      }
+    },
+    {
+      "weight": 3,
+      "element": {
+        "location": "stonevaults:dungeon/rooms/combination_lock",
+        "processors": "stonevaults:dungeon",
         "projection": "rigid",
         "element_type": "minecraft:single_pool_element"
       }

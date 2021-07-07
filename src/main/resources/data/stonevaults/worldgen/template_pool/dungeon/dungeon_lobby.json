@@ -1,12 +1,12 @@
 {
-  "name": "stoenvaults:startpool_igloo",
+  "name": "stoenvaults:dungeon/dungeon_lobby",
   "fallback": "minecraft:empty",
   "elements": [
     {
       "weight": 3,
       "element": {
         "location": "stonevaults:dungeon/lobby/lobby_01",
-        "processors": "stonevaults:decayer",
+        "processors": "stonevaults:dungeon",
         "projection": "rigid",
         "element_type": "minecraft:single_pool_element"
       }

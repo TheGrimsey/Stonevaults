@@ -1,5 +1,5 @@
 {
-  "name": "stoenvaults:startpool_igloo",
+  "name": "stoenvaults:dungeon/dungeon_stairs",
   "fallback": "minecraft:empty",
   "elements": [
     {

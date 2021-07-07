@@ -5,7 +5,7 @@
     {
       "weight": 3,
       "element": {
-        "location": "stonevaults:igloo/igloo",
+        "location": "stonevaults:dungeon/entrances/entrance_01",
         "processors": "stonevaults:icer",
         "projection": "rigid",
         "element_type": "minecraft:single_pool_element"

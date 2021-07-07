@@ -37,9 +37,10 @@ public class VineWallProcessor extends StructureProcessor {
             chunkRandom.setSeed(structureBlockInfoWorld.pos.asLong() * structureBlockInfoWorld.pos.getY());
             if(chunkRandom.nextFloat() < probability)
             {
-                BlockState centerBlockState = world.getBlockState(structureBlockInfoWorld.pos);
+                // This is the position we place a vine in.
+                BlockState worldBlockState = world.getBlockState(structureBlockInfoWorld.pos);
 
-                if(centerBlockState.isAir())
+                if(worldBlockState.isAir())
                 {
                     BlockPos.Mutable mutPos = new BlockPos.Mutable();
                     for(Direction direction : Direction.Type.HORIZONTAL)
@@ -48,7 +49,7 @@ public class VineWallProcessor extends StructureProcessor {
                         BlockState directionState = world.getBlockState(mutPos);
 
                         // Only place on full faces.
-                        if(Block.isFaceFullSquare(directionState.getCollisionShape(world, pos), direction.getOpposite()))
+                        if(Block.isFaceFullSquare(directionState.getCollisionShape(world, pos), direction.getOpposite()) && !directionState.isAir())
                         {
                             BlockState vineBlock = Blocks.VINE.getDefaultState().with(VineBlock.getFacingProperty(direction), true);
 
