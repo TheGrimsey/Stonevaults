@@ -1,0 +1,60 @@
+{
+  "name": "stonevaults:dungeon/zombie_three_way_blocker",
+  "fallback": "stonevaults:dungeon/zombie_three_way_blocker",
+  "elements": [
+    {
+      "weight": 3,
+      "element": {
+        "location": "stonevaults:dungeon/rooms/zombie_three_way_temple/01",
+        "processors": "stonevaults:dungeon",
+        "projection": "rigid",
+        "element_type": "minecraft:single_pool_element"
+      }
+    },
+    {
+      "weight": 3,
+      "element": {
+        "location": "stonevaults:dungeon/rooms/zombie_three_way_temple/02",
+        "processors": "stonevaults:dungeon",
+        "projection": "rigid",
+        "element_type": "minecraft:single_pool_element"
+      }
+    },
+    {
+      "weight": 3,
+      "element": {
+        "location": "stonevaults:dungeon/rooms/zombie_three_way_temple/03",
+        "processors": "stonevaults:dungeon",
+        "projection": "rigid",
+        "element_type": "minecraft:single_pool_element"
+      }
+    },
+    {
+      "weight": 3,
+      "element": {
+        "location": "stonevaults:dungeon/rooms/zombie_three_way_temple/04",
+        "processors": "stonevaults:dungeon",
+        "projection": "rigid",
+        "element_type": "minecraft:single_pool_element"
+      }
+    },
+    {
+      "weight": 3,
+      "element": {
+        "location": "stonevaults:dungeon/rooms/zombie_three_way_temple/05",
+        "processors": "stonevaults:dungeon",
+        "projection": "rigid",
+        "element_type": "minecraft:single_pool_element"
+      }
+    },
+    {
+      "weight": 3,
+      "element": {
+        "location": "stonevaults:dungeon/rooms/zombie_three_way_temple/06",
+        "processors": "stonevaults:dungeon",
+        "projection": "rigid",
+        "element_type": "minecraft:single_pool_element"
+      }
+    }
+  ]
+}

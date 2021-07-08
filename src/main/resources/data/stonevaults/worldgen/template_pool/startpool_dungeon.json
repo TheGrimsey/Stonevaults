@@ -1,12 +1,12 @@
 {
-  "name": "stoenvaults:startpool_igloo",
+  "name": "stonevaults:startpool_igloo",
   "fallback": "minecraft:empty",
   "elements": [
     {
       "weight": 3,
       "element": {
         "location": "stonevaults:dungeon/entrances/entrance_01",
-        "processors": "stonevaults:icer",
+        "processors": "stonevaults:dungeon",
         "projection": "rigid",
         "element_type": "minecraft:single_pool_element"
       }

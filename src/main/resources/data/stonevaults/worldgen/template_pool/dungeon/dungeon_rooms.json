@@ -41,7 +41,34 @@
     {
       "weight": 3,
       "element": {
+        "location": "stonevaults:dungeon/rooms/zombie_three_way_temple",
+        "processors": "stonevaults:dungeon",
+        "projection": "rigid",
+        "element_type": "minecraft:single_pool_element"
+      }
+    },
+    {
+      "weight": 5,
+      "element": {
+        "location": "stonevaults:dungeon/rooms/stairs",
+        "processors": "stonevaults:dungeon",
+        "projection": "rigid",
+        "element_type": "minecraft:single_pool_element"
+      }
+    },
+    {
+      "weight": 3,
+      "element": {
         "location": "stonevaults:dungeon/rooms/combination_lock",
+        "processors": "stonevaults:dungeon",
+        "projection": "rigid",
+        "element_type": "minecraft:single_pool_element"
+      }
+    },
+    {
+      "weight": 3,
+      "element": {
+        "location": "stonevaults:dungeon/rooms/item_combination_lock",
         "processors": "stonevaults:dungeon",
         "projection": "rigid",
         "element_type": "minecraft:single_pool_element"

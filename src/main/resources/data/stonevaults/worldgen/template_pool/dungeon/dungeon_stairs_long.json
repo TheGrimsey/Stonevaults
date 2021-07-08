@@ -1,0 +1,15 @@
+{
+  "name": "stonevaults:dungeon/dungeon_stairs",
+  "fallback": "minecraft:empty",
+  "elements": [
+    {
+      "weight": 3,
+      "element": {
+        "location": "stonevaults:dungeon/stairway/fall_long",
+        "processors": "stonevaults:decayer",
+        "projection": "rigid",
+        "element_type": "minecraft:single_pool_element"
+      }
+    }
+  ]
+}
