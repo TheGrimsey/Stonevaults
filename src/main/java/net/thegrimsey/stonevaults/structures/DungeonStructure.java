@@ -13,6 +13,8 @@ import net.minecraft.util.registry.Registry;
 import net.minecraft.world.HeightLimitView;
 import net.minecraft.world.Heightmap;
 import net.minecraft.world.biome.Biome;
+import net.minecraft.world.biome.source.BiomeSource;
+import net.minecraft.world.gen.ChunkRandom;
 import net.minecraft.world.gen.chunk.ChunkGenerator;
 import net.minecraft.world.gen.feature.DefaultFeatureConfig;
 import net.minecraft.world.gen.feature.StructureFeature;
@@ -30,6 +32,17 @@ public class DungeonStructure extends StructureFeature<DefaultFeatureConfig> {
     @Override
     public StructureStartFactory<DefaultFeatureConfig> getStructureStartFactory() {
         return DungeonStructure.Start::new;
+    }
+
+    @Override
+    protected boolean shouldStartAt(ChunkGenerator chunkGenerator, BiomeSource biomeSource, long worldSeed, ChunkRandom random, ChunkPos pos, Biome biome, ChunkPos chunkPos, DefaultFeatureConfig config, HeightLimitView world) {
+        int terrainHeight = chunkGenerator.getHeightOnGround(pos.x << 4, pos.z << 4, Heightmap.Type.WORLD_SURFACE_WG, world);
+        int maxHeight = chunkGenerator.getSeaLevel() + 32;
+
+        if(terrainHeight > maxHeight)
+            return false;
+
+        return super.shouldStartAt(chunkGenerator, biomeSource, worldSeed, random, pos, biome, chunkPos, config, world);
     }
 
     public static class Start extends MarginedStructureStart<DefaultFeatureConfig> {

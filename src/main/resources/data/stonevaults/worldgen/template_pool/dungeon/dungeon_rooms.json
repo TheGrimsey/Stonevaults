@@ -3,7 +3,7 @@
   "fallback": "stonevaults:dungeon/dungeon_treasure",
   "elements": [
     {
-      "weight": 3,
+      "weight": 1,
       "element": {
         "location": "stonevaults:dungeon/rooms/lava_trap",
         "processors": "stonevaults:dungeon",
@@ -12,7 +12,7 @@
       }
     },
     {
-      "weight": 3,
+      "weight": 1,
       "element": {
         "location": "stonevaults:dungeon/rooms/lava_parkour",
         "processors": "stonevaults:dungeon",
@@ -21,7 +21,7 @@
       }
     },
     {
-      "weight": 3,
+      "weight": 1,
       "element": {
         "location": "stonevaults:dungeon/rooms/library",
         "processors": "stonevaults:dungeon",
@@ -30,7 +30,7 @@
       }
     },
     {
-      "weight": 3,
+      "weight": 1,
       "element": {
         "location": "stonevaults:dungeon/rooms/big_library",
         "processors": "stonevaults:dungeon",
@@ -39,7 +39,7 @@
       }
     },
     {
-      "weight": 3,
+      "weight": 1,
       "element": {
         "location": "stonevaults:dungeon/rooms/skeleton_trap",
         "processors": "stonevaults:dungeon",
@@ -48,7 +48,7 @@
       }
     },
     {
-      "weight": 3,
+      "weight": 1,
       "element": {
         "location": "stonevaults:dungeon/rooms/zombie_three_way_temple",
         "processors": "stonevaults:dungeon",
@@ -57,7 +57,7 @@
       }
     },
     {
-      "weight": 5,
+      "weight": 2,
       "element": {
         "location": "stonevaults:dungeon/rooms/stairs",
         "processors": "stonevaults:dungeon",
@@ -66,7 +66,7 @@
       }
     },
     {
-      "weight": 3,
+      "weight": 1,
       "element": {
         "location": "stonevaults:dungeon/rooms/combination_lock",
         "processors": "stonevaults:dungeon",
@@ -75,7 +75,7 @@
       }
     },
     {
-      "weight": 3,
+      "weight": 1,
       "element": {
         "location": "stonevaults:dungeon/rooms/item_combination_lock",
         "processors": "stonevaults:dungeon",
@@ -84,7 +84,7 @@
       }
     },
     {
-      "weight": 3,
+      "weight": 1,
       "element": {
         "location": "stonevaults:dungeon/rooms/pressure_plate_lock",
         "processors": "stonevaults:dungeon",
@@ -93,7 +93,7 @@
       }
     },
     {
-      "weight": 3,
+      "weight": 1,
       "element": {
         "location": "stonevaults:dungeon/rooms/tight_maze",
         "processors": "stonevaults:dungeon",
@@ -102,7 +102,7 @@
       }
     },
     {
-      "weight": 3,
+      "weight": 1,
       "element": {
         "location": "stonevaults:dungeon/rooms/tnt_plate_trap",
         "processors": "stonevaults:dungeon",
@@ -120,9 +120,18 @@
       }
     },
     {
-      "weight": 3,
+      "weight": 1,
       "element": {
         "location": "stonevaults:dungeon/rooms/drowned_junction",
+        "processors": "stonevaults:dungeon",
+        "projection": "rigid",
+        "element_type": "minecraft:single_pool_element"
+      }
+    },
+    {
+      "weight": 1,
+      "element": {
+        "location": "stonevaults:dungeon/rooms/illager_bedroom",
         "processors": "stonevaults:dungeon",
         "projection": "rigid",
         "element_type": "minecraft:single_pool_element"
