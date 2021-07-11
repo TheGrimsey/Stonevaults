@@ -61,10 +61,10 @@ public class DungeonStructure extends StructureFeature<DefaultFeatureConfig> {
 
             // Initialize structurePoolFeatureConfig if it is null. Doing it everytime we spawn creates garbage so we just make one.
             if (structurePoolFeatureConfig == null)
-                structurePoolFeatureConfig = new StructurePoolFeatureConfig(() -> registryManager.get(Registry.STRUCTURE_POOL_KEY).get(START_POOL), 9);
+                structurePoolFeatureConfig = new StructurePoolFeatureConfig(() -> registryManager.get(Registry.STRUCTURE_POOL_KEY).get(START_POOL), 8);
 
             if (longStructurePoolFeatureConfig == null)
-                longStructurePoolFeatureConfig = new StructurePoolFeatureConfig(() -> registryManager.get(Registry.STRUCTURE_POOL_KEY).get(START_POOL_LONG), 9);
+                longStructurePoolFeatureConfig = new StructurePoolFeatureConfig(() -> registryManager.get(Registry.STRUCTURE_POOL_KEY).get(START_POOL_LONG), 8);
 
             // Spawn structure.
             StructurePoolBasedGenerator.method_30419(registryManager,

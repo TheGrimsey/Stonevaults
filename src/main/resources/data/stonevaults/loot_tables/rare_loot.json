@@ -15,7 +15,7 @@
               "function": "minecraft:set_count",
               "count": {
                 "min": 1.0,
-                "max": 4.0,
+                "max": 3.0,
                 "type": "minecraft:uniform"
               }
             }
@@ -45,7 +45,7 @@
               "function": "minecraft:set_count",
               "count": {
                 "min": 1.0,
-                "max": 3.0,
+                "max": 4.0,
                 "type": "minecraft:uniform"
               }
             }
@@ -60,7 +60,7 @@
               "function": "minecraft:set_count",
               "count": {
                 "min": 1.0,
-                "max": 2.0,
+                "max": 3.0,
                 "type": "minecraft:uniform"
               }
             }
@@ -70,18 +70,13 @@
         },
         {
           "type": "minecraft:item",
-          "name": "minecraft:iron_horse_armor",
-          "weight": 2
-        },
-        {
-          "type": "minecraft:item",
           "name": "minecraft:golden_horse_armor",
-          "weight": 2
+          "weight": 1
         },
         {
           "type": "minecraft:item",
           "name": "minecraft:diamond_horse_armor",
-          "weight": 2
+          "weight": 1
         },
         {
           "type": "minecraft:item",
@@ -120,7 +115,7 @@
           "functions": [
             {
               "function": "minecraft:enchant_with_levels",
-              "levels": 10,
+              "levels": 20,
               "treasure": true
             }
           ],

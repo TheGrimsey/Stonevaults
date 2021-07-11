@@ -66,24 +66,6 @@
       }
     },
     {
-      "weight": 1,
-      "element": {
-        "location": "stonevaults:magetower/roofs/ruins",
-        "processors": "stonevaults:decayer",
-        "projection": "rigid",
-        "element_type": "minecraft:single_pool_element"
-      }
-    },
-    {
-      "weight": 2,
-      "element": {
-        "location": "stonevaults:magetower/floors/tinymaintower",
-        "processors": "stonevaults:decayer",
-        "projection": "rigid",
-        "element_type": "minecraft:single_pool_element"
-      }
-    },
-    {
       "weight": 4,
       "element": {
         "location": "stonevaults:magetower/floors/rainbow",
@@ -114,6 +96,24 @@
       "weight": 10,
       "element": {
         "location": "stonevaults:magetower/floors/dark_altar",
+        "processors": "stonevaults:decayer",
+        "projection": "rigid",
+        "element_type": "minecraft:single_pool_element"
+      }
+    },
+    {
+      "weight": 1,
+      "element": {
+        "location": "stonevaults:magetower/floors/tinymaintower",
+        "processors": "stonevaults:decayer",
+        "projection": "rigid",
+        "element_type": "minecraft:single_pool_element"
+      }
+    },
+    {
+      "weight": 1,
+      "element": {
+        "location": "stonevaults:magetower/roofs/ruins",
         "processors": "stonevaults:decayer",
         "projection": "rigid",
         "element_type": "minecraft:single_pool_element"
