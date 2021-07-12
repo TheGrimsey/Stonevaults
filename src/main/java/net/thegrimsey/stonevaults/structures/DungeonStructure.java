@@ -57,14 +57,14 @@ public class DungeonStructure extends StructureFeature<DefaultFeatureConfig> {
         public void init(DynamicRegistryManager registryManager, ChunkGenerator chunkGenerator, StructureManager manager, ChunkPos pos, Biome biome, DefaultFeatureConfig config, HeightLimitView world) {
             // Position, we don't care about Y as we will just be placed on top on the terrain.
             BlockPos blockPos = new BlockPos(pos.x << 4, 0, pos.z << 4);
-            boolean highDungeon = chunkGenerator.getHeightInGround(blockPos.getX(), blockPos.getZ(), Heightmap.Type.WORLD_SURFACE, world) > (chunkGenerator.getSeaLevel() + 16);
+            boolean highDungeon = chunkGenerator.getHeightInGround(blockPos.getX(), blockPos.getZ(), Heightmap.Type.WORLD_SURFACE, world) >= (chunkGenerator.getSeaLevel() + 12);
 
             // Initialize structurePoolFeatureConfig if it is null. Doing it everytime we spawn creates garbage so we just make one.
             if (structurePoolFeatureConfig == null)
-                structurePoolFeatureConfig = new StructurePoolFeatureConfig(() -> registryManager.get(Registry.STRUCTURE_POOL_KEY).get(START_POOL), 8);
+                structurePoolFeatureConfig = new StructurePoolFeatureConfig(() -> registryManager.get(Registry.STRUCTURE_POOL_KEY).get(START_POOL), Stonevaults.CONFIG.DUNGEON.SIZE);
 
             if (longStructurePoolFeatureConfig == null)
-                longStructurePoolFeatureConfig = new StructurePoolFeatureConfig(() -> registryManager.get(Registry.STRUCTURE_POOL_KEY).get(START_POOL_LONG), 8);
+                longStructurePoolFeatureConfig = new StructurePoolFeatureConfig(() -> registryManager.get(Registry.STRUCTURE_POOL_KEY).get(START_POOL_LONG), Stonevaults.CONFIG.DUNGEON.SIZE);
 
             // Spawn structure.
             StructurePoolBasedGenerator.method_30419(registryManager,

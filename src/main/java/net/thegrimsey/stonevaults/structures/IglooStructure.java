@@ -44,7 +44,7 @@ public class IglooStructure extends StructureFeature<DefaultFeatureConfig> {
 
             // Initialize structurePoolFeatureConfig if it is null. Doing it everytime we spawn creates garbage so we just make one.
             if (structurePoolFeatureConfig == null)
-                structurePoolFeatureConfig = new StructurePoolFeatureConfig(() -> registryManager.get(Registry.STRUCTURE_POOL_KEY).get(START_POOL), 7);
+                structurePoolFeatureConfig = new StructurePoolFeatureConfig(() -> registryManager.get(Registry.STRUCTURE_POOL_KEY).get(START_POOL), Stonevaults.CONFIG.IGLOO.SIZE);
 
             // Spawn structure.
             StructurePoolBasedGenerator.method_30419(registryManager,

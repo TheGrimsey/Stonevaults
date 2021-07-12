@@ -33,9 +33,9 @@ public class StonevaultStructures {
 
     public static void registerStructures()
     {
-        registerStructure("magetower", MAGETOWER, CONFIGURED_MAGETOWER, BiomeSelectors.foundInOverworld().and(BiomeSelectors.categories(Biome.Category.FOREST, Biome.Category.JUNGLE)), new StructureConfig(20, 10, 383209018), true);
-        registerStructure("igloo", IGLOO, CONFIGURED_IGLOO, BiomeSelectors.foundInOverworld().and(BiomeSelectors.categories(Biome.Category.ICY)), new StructureConfig(20, 10, 38419), true);
-        registerStructure("dungeon", DUNGEON, CONFIGURED_DUNGEON, BiomeSelectors.foundInOverworld().and(BiomeSelectors.categories(Biome.Category.OCEAN, Biome.Category.BEACH).negate()), new StructureConfig(20, 10, 2238181), false);
+        registerStructure("magetower", MAGETOWER, CONFIGURED_MAGETOWER, BiomeSelectors.foundInOverworld().and(BiomeSelectors.categories(Biome.Category.FOREST, Biome.Category.JUNGLE)), Stonevaults.CONFIG.MAGETOWER.STUCTURECONFIG, true);
+        registerStructure("igloo", IGLOO, CONFIGURED_IGLOO, BiomeSelectors.foundInOverworld().and(BiomeSelectors.categories(Biome.Category.ICY)), Stonevaults.CONFIG.IGLOO.STUCTURECONFIG, true);
+        registerStructure("dungeon", DUNGEON, CONFIGURED_DUNGEON, BiomeSelectors.foundInOverworld().and(BiomeSelectors.categories(Biome.Category.OCEAN, Biome.Category.BEACH, Biome.Category.ICY).negate()), Stonevaults.CONFIG.DUNGEON.STUCTURECONFIG, false);
     }
 
     static void registerStructure(String Id, StructureFeature<DefaultFeatureConfig> structureFeature, ConfiguredStructureFeature<?, ?> configuredStructureFeature, Predicate<BiomeSelectionContext> biomes, StructureConfig structureConfig, boolean adjustSurface)
