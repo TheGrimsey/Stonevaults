@@ -5,7 +5,16 @@
     {
       "weight": 3,
       "element": {
-        "location": "stonevaults:dungeon/entrances/entrance_01",
+        "location": "stonevaults:dungeon/entrances/entrance_tower",
+        "processors": "stonevaults:dungeon",
+        "projection": "rigid",
+        "element_type": "minecraft:single_pool_element"
+      }
+    },
+    {
+      "weight": 3,
+      "element": {
+        "location": "stonevaults:dungeon/entrances/entrance_tower_2",
         "processors": "stonevaults:dungeon",
         "projection": "rigid",
         "element_type": "minecraft:single_pool_element"
