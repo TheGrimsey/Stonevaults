@@ -67,7 +67,7 @@ public class DungeonStructure extends StructureFeature<DefaultFeatureConfig> {
                 longStructurePoolFeatureConfig = new StructurePoolFeatureConfig(() -> registryManager.get(Registry.STRUCTURE_POOL_KEY).get(START_POOL_LONG), Stonevaults.CONFIG.DUNGEON.SIZE);
 
             // Spawn structure.
-            StructurePoolBasedGenerator.method_30419(registryManager,
+            StructurePoolBasedGenerator.generate(registryManager,
                     highDungeon ? longStructurePoolFeatureConfig : structurePoolFeatureConfig,
                     PoolStructurePiece::new, chunkGenerator, manager, blockPos, this, this.random, false, true, world);
 

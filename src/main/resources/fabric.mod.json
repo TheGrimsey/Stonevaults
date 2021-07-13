@@ -23,7 +23,6 @@
     ]
   },
   "mixins": [
-    "stonevaults.mixins.json"
   ],
 
   "depends": {

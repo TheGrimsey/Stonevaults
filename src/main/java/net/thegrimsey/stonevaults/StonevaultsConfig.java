@@ -18,9 +18,10 @@ public class StonevaultsConfig implements ConfigData {
         }
     }
 
-    @Comment("Structure Configs are laid out as follows:\n" +
-            "Bruh")
-
+    @Comment("\nStructure Configs.\n" +
+            "- Lower SPACING & SEPARATION = more structures\n" +
+            "- SALT is the generation seed for structures. This is in addition to world seed. Do not change this unless you commonly see overlapping structures.\n" +
+            "- Change SIZE so modify how many times the generator tries to add additional rooms. For example on mage towers this would increase the amount of floors.")
 
     public Structure MAGETOWER = new Structure(new StructureConfig(30, 14, 383209018), 7);
     public Structure IGLOO = new Structure(new StructureConfig(28, 10, 38419), 7);

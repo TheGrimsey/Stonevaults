@@ -47,7 +47,7 @@ public class MageTowerStructure extends StructureFeature<DefaultFeatureConfig> {
                 structurePoolFeatureConfig = new StructurePoolFeatureConfig(() -> registryManager.get(Registry.STRUCTURE_POOL_KEY).get(START_POOL), Stonevaults.CONFIG.MAGETOWER.SIZE);
 
             // Spawn structure.
-            StructurePoolBasedGenerator.method_30419(registryManager,
+            StructurePoolBasedGenerator.generate(registryManager,
                     structurePoolFeatureConfig,
                     PoolStructurePiece::new, chunkGenerator, manager, blockPos, this, this.random, false, true, world);
 

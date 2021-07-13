@@ -39,15 +39,15 @@ public class IglooStructure extends StructureFeature<DefaultFeatureConfig> {
 
         @Override
         public void init(DynamicRegistryManager registryManager, ChunkGenerator chunkGenerator, StructureManager manager, ChunkPos pos, Biome biome, DefaultFeatureConfig config, HeightLimitView world) {
-            // Position, we don't care about Y as we will just be placed on top on the terrain.
+            // Convert chunk position to blockpos, we don't care about Y as we will just be placed on top on the terrain.
             BlockPos blockPos = new BlockPos(pos.x << 4, 0, pos.z << 4);
 
-            // Initialize structurePoolFeatureConfig if it is null. Doing it everytime we spawn creates garbage so we just make one.
+            // Initialize structurePoolFeatureConfig if it is null. Doing it everytime we spawn theoretically creates garbage so we just make one.
             if (structurePoolFeatureConfig == null)
                 structurePoolFeatureConfig = new StructurePoolFeatureConfig(() -> registryManager.get(Registry.STRUCTURE_POOL_KEY).get(START_POOL), Stonevaults.CONFIG.IGLOO.SIZE);
 
             // Spawn structure.
-            StructurePoolBasedGenerator.method_30419(registryManager,
+            StructurePoolBasedGenerator.generate(registryManager,
                     structurePoolFeatureConfig,
                     PoolStructurePiece::new, chunkGenerator, manager, blockPos, this, this.random, false, true, world);
 
