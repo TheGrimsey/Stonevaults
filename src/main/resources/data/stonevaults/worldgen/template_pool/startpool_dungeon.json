@@ -1,20 +1,39 @@
 {
-  "name": "stonevaults:startpool_igloo",
+  "name": "stonevaults:startpool_dungeon",
   "fallback": "minecraft:empty",
   "elements": [
     {
-      "weight": 3,
+      "weight": 2,
       "element": {
-        "location": "stonevaults:dungeon/entrances/entrance_tower",
+        "location": "stonevaults:dungeon/entrances/entrance_1",
         "processors": "stonevaults:dungeon",
         "projection": "rigid",
         "element_type": "minecraft:single_pool_element"
       }
     },
     {
-      "weight": 3,
+      "weight": 2,
       "element": {
-        "location": "stonevaults:dungeon/entrances/entrance_tower_2",
+        "location": "stonevaults:dungeon/entrances/entrance_2",
+        "processors": "stonevaults:dungeon",
+        "projection": "rigid",
+        "element_type": "minecraft:single_pool_element"
+      }
+    },
+    
+    {
+      "weight": 1,
+      "element": {
+        "location": "stonevaults:dungeon/entrances/entrance_1_long",
+        "processors": "stonevaults:dungeon",
+        "projection": "rigid",
+        "element_type": "minecraft:single_pool_element"
+      }
+    },
+    {
+      "weight": 1,
+      "element": {
+        "location": "stonevaults:dungeon/entrances/entrance_2_long",
         "processors": "stonevaults:dungeon",
         "projection": "rigid",
         "element_type": "minecraft:single_pool_element"

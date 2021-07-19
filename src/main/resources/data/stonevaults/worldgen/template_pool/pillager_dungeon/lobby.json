@@ -1,0 +1,15 @@
+{
+  "name": "stoenvaults:pillager_dungeon/lobby",
+  "fallback": "minecraft:empty",
+  "elements": [
+    {
+      "weight": 3,
+      "element": {
+        "location": "stonevaults:pillager_dungeon/lobby/lobby",
+        "processors": "stonevaults:dungeon",
+        "projection": "rigid",
+        "element_type": "minecraft:single_pool_element"
+      }
+    }
+  ]
+}

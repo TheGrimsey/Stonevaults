@@ -1,0 +1,33 @@
+{
+  "name": "stonevaults:pillager_dungeon/illagers",
+  "fallback": "stonevaults:pillager_dungeon/illagers",
+  "elements": [
+    {
+      "weight": 1,
+      "element": {
+        "location": "stonevaults:pillager_dungeon/illagers/evoker",
+        "processors": "stonevaults:dungeon",
+        "projection": "rigid",
+        "element_type": "minecraft:single_pool_element"
+      }
+    },
+    {
+      "weight": 3,
+      "element": {
+        "location": "stonevaults:pillager_dungeon/illagers/vindicator",
+        "processors": "stonevaults:dungeon",
+        "projection": "rigid",
+        "element_type": "minecraft:single_pool_element"
+      }
+    },
+    {
+      "weight": 3,
+      "element": {
+        "location": "stonevaults:pillager_dungeon/illagers/pillager",
+        "processors": "stonevaults:dungeon",
+        "projection": "rigid",
+        "element_type": "minecraft:single_pool_element"
+      }
+    }
+  ]
+}

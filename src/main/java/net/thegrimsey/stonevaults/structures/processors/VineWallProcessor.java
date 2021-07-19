@@ -23,34 +23,29 @@ public class VineWallProcessor extends StructureProcessor {
     public static final Codec<VineWallProcessor> CODEC = Codec.FLOAT.fieldOf("probability").xmap(VineWallProcessor::new, (vineWallProcessor) -> vineWallProcessor.probability).codec();
 
     private final float probability;
-    public VineWallProcessor(float probability)
-    {
+
+    public VineWallProcessor(float probability) {
         this.probability = probability;
     }
 
     @Nullable
     @Override
     public Structure.StructureBlockInfo process(WorldView world, BlockPos pos, BlockPos pivot, Structure.StructureBlockInfo structureBlockInfoLocal, Structure.StructureBlockInfo structureBlockInfoWorld, StructurePlacementData data) {
-        if(structureBlockInfoWorld.state.isAir())
-        {
+        if (structureBlockInfoWorld.state.isAir()) {
             Random chunkRandom = new ChunkRandom();
             chunkRandom.setSeed(structureBlockInfoWorld.pos.asLong() * structureBlockInfoWorld.pos.getY());
-            if(chunkRandom.nextFloat() < probability)
-            {
+            if (chunkRandom.nextFloat() < probability) {
                 // This is the position we place a vine in.
                 BlockState worldBlockState = world.getBlockState(structureBlockInfoWorld.pos);
 
-                if(worldBlockState.isAir())
-                {
+                if (worldBlockState.isAir()) {
                     BlockPos.Mutable mutPos = new BlockPos.Mutable();
-                    for(Direction direction : Direction.Type.HORIZONTAL)
-                    {
+                    for (Direction direction : Direction.Type.HORIZONTAL) {
                         mutPos.set(structureBlockInfoWorld.pos).move(direction);
                         BlockState directionState = world.getBlockState(mutPos);
 
                         // Only place on full faces.
-                        if(Block.isFaceFullSquare(directionState.getCollisionShape(world, pos), direction.getOpposite()) && !directionState.isAir())
-                        {
+                        if (Block.isFaceFullSquare(directionState.getCollisionShape(world, pos), direction.getOpposite()) && !directionState.isAir()) {
                             BlockState vineBlock = Blocks.VINE.getDefaultState().with(VineBlock.getFacingProperty(direction), true);
 
                             Chunk chunk = world.getChunk(structureBlockInfoWorld.pos);

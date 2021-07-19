@@ -39,7 +39,7 @@ public class DungeonStructure extends StructureFeature<DefaultFeatureConfig> {
         int terrainHeight = chunkGenerator.getHeightOnGround(pos.x << 4, pos.z << 4, Heightmap.Type.WORLD_SURFACE_WG, world);
         int maxHeight = chunkGenerator.getSeaLevel() + 32;
 
-        if(terrainHeight > maxHeight)
+        if (terrainHeight > maxHeight)
             return false;
 
         return super.shouldStartAt(chunkGenerator, biomeSource, worldSeed, random, pos, biome, chunkPos, config, world);

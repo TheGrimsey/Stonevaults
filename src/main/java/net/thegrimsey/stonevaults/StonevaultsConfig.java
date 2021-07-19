@@ -11,8 +11,7 @@ public class StonevaultsConfig implements ConfigData {
         public StructureConfig STUCTURECONFIG;
         public int SIZE;
 
-        public Structure(StructureConfig structureConfig, int size)
-        {
+        public Structure(StructureConfig structureConfig, int size) {
             this.STUCTURECONFIG = structureConfig;
             this.SIZE = size;
         }

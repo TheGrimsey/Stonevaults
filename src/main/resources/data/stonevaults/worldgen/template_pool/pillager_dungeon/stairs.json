@@ -1,0 +1,15 @@
+{
+  "name": "stonevaults:pillager_dungeon/stairs",
+  "fallback": "minecraft:empty",
+  "elements": [
+    {
+      "weight": 3,
+      "element": {
+        "location": "stonevaults:pillager_dungeon/stairway/fall_01",
+        "processors": "stonevaults:dungeon",
+        "projection": "rigid",
+        "element_type": "minecraft:single_pool_element"
+      }
+    }
+  ]
+}

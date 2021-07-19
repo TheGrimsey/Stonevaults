@@ -1,0 +1,24 @@
+{
+  "name": "stonevaults:startpool_pillager_dungeon_long",
+  "fallback": "minecraft:empty",
+  "elements": [
+    {
+      "weight": 3,
+      "element": {
+        "location": "stonevaults:pillager_dungeon/entrances/entrance_tower_long",
+        "processors": "stonevaults:dungeon",
+        "projection": "rigid",
+        "element_type": "minecraft:single_pool_element"
+      }
+    },
+    {
+      "weight": 3,
+      "element": {
+        "location": "stonevaults:pillager_dungeon/entrances/entrance_tower_2_long",
+        "processors": "stonevaults:dungeon",
+        "projection": "rigid",
+        "element_type": "minecraft:single_pool_element"
+      }
+    }
+  ]
+}

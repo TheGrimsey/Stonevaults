@@ -32,15 +32,6 @@
     {
       "weight": 1,
       "element": {
-        "location": "stonevaults:dungeon/rooms/big_library",
-        "processors": "stonevaults:dungeon",
-        "projection": "rigid",
-        "element_type": "minecraft:single_pool_element"
-      }
-    },
-    {
-      "weight": 1,
-      "element": {
         "location": "stonevaults:dungeon/rooms/skeleton_trap",
         "processors": "stonevaults:dungeon",
         "projection": "rigid",
@@ -124,24 +115,6 @@
       "element": {
         "location": "stonevaults:dungeon/rooms/drowned_junction",
         "processors": "stonevaults:dungeon",
-        "projection": "rigid",
-        "element_type": "minecraft:single_pool_element"
-      }
-    },
-    {
-      "weight": 1,
-      "element": {
-        "location": "stonevaults:dungeon/rooms/illager_bedroom",
-        "processors": "stonevaults:dungeon",
-        "projection": "rigid",
-        "element_type": "minecraft:single_pool_element"
-      }
-    },
-    {
-      "weight": 1,
-      "element": {
-        "location": "stonevaults:dungeon/rooms/nether_portal",
-        "processors": "stonevaults:netherer",
         "projection": "rigid",
         "element_type": "minecraft:single_pool_element"
       }
