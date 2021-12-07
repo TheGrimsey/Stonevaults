@@ -14,7 +14,6 @@ import net.minecraft.world.gen.GenerationStep;
 import net.minecraft.world.gen.chunk.StructureConfig;
 import net.minecraft.world.gen.feature.ConfiguredStructureFeature;
 import net.minecraft.world.gen.feature.DefaultFeatureConfig;
-import net.minecraft.world.gen.feature.FeatureConfig;
 import net.minecraft.world.gen.feature.StructureFeature;
 import net.thegrimsey.stonevaults.structures.DungeonStructure;
 import net.thegrimsey.stonevaults.structures.IglooStructure;
@@ -51,9 +50,7 @@ public class StonevaultStructures {
 
         var structureBuilder = FabricStructureBuilder.create(identifier, structureFeature)
                 .step(GenerationStep.Feature.SURFACE_STRUCTURES)
-                .defaultConfig(structureConfig)
-                .superflatFeature(structureFeature.configure(FeatureConfig.DEFAULT));
-
+                .defaultConfig(structureConfig);
         if (adjustSurface)
             structureBuilder.adjustsSurface();
 
