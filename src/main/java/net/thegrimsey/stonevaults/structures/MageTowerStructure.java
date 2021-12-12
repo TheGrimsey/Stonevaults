@@ -1,61 +1,37 @@
 package net.thegrimsey.stonevaults.structures;
 
 import com.mojang.serialization.Codec;
-import net.minecraft.structure.MarginedStructureStart;
 import net.minecraft.structure.PoolStructurePiece;
-import net.minecraft.structure.StructureManager;
+import net.minecraft.structure.StructureGeneratorFactory;
+import net.minecraft.structure.StructurePiecesGenerator;
 import net.minecraft.structure.pool.StructurePoolBasedGenerator;
 import net.minecraft.util.Identifier;
 import net.minecraft.util.math.BlockPos;
-import net.minecraft.util.math.ChunkPos;
-import net.minecraft.util.registry.DynamicRegistryManager;
 import net.minecraft.util.registry.Registry;
-import net.minecraft.world.HeightLimitView;
-import net.minecraft.world.biome.Biome;
-import net.minecraft.world.gen.chunk.ChunkGenerator;
-import net.minecraft.world.gen.feature.DefaultFeatureConfig;
 import net.minecraft.world.gen.feature.StructureFeature;
 import net.minecraft.world.gen.feature.StructurePoolFeatureConfig;
 import net.thegrimsey.stonevaults.Stonevaults;
+import net.thegrimsey.stonevaults.mixin.StructurePoolFeatureConfigAccessor;
 
-public class MageTowerStructure extends StructureFeature<DefaultFeatureConfig> {
-    public static Identifier START_POOL = new Identifier(Stonevaults.MODID, "startpool_magetower");
+import java.util.Optional;
 
-    public MageTowerStructure(Codec<DefaultFeatureConfig> codec) {
-        super(codec);
+public class MageTowerStructure extends StructureFeature<StructurePoolFeatureConfig> {
+    public static final Identifier START_POOL = new Identifier(Stonevaults.MODID, "startpool_magetower");
+
+    public MageTowerStructure(Codec<StructurePoolFeatureConfig> codec) {
+        super(codec, MageTowerStructure::createPiecesGenerator);
     }
 
-    @Override
-    public StructureStartFactory<DefaultFeatureConfig> getStructureStartFactory() {
-        return MageTowerStructure.Start::new;
-    }
+    public static Optional<StructurePiecesGenerator<StructurePoolFeatureConfig>> createPiecesGenerator(StructureGeneratorFactory.Context<StructurePoolFeatureConfig> context) {
+        int x = context.chunkPos().x << 4;
+        int z = context.chunkPos().z << 4;
 
-    public static class Start extends MarginedStructureStart<DefaultFeatureConfig> {
-        private static StructurePoolFeatureConfig structurePoolFeatureConfig = null;
+        // Position, we don't care about Y as we will just be placed on top on the terrain.
+        BlockPos blockPos = new BlockPos(x, 0, z);
 
-        public Start(StructureFeature<DefaultFeatureConfig> structureIn, ChunkPos pos, int referenceIn, long seedIn) {
-            super(structureIn, pos, referenceIn, seedIn);
-        }
+        ((StructurePoolFeatureConfigAccessor)context.config()).setStructures(() -> context.registryManager().get(Registry.STRUCTURE_POOL_KEY).get(START_POOL));
+        ((StructurePoolFeatureConfigAccessor)context.config()).setSize(Stonevaults.CONFIG.MAGETOWER.SIZE);
 
-        @Override
-        public void init(DynamicRegistryManager registryManager, ChunkGenerator chunkGenerator, StructureManager manager, ChunkPos pos, Biome biome, DefaultFeatureConfig config, HeightLimitView world) {
-            // Position, we don't care about Y as we will just be placed on top on the terrain.
-            BlockPos blockPos = new BlockPos(pos.x << 4, 0, pos.z << 4);
-
-            // Initialize structurePoolFeatureConfig if it is null. Doing it everytime we spawn creates garbage so we just make one.
-            if (structurePoolFeatureConfig == null)
-                structurePoolFeatureConfig = new StructurePoolFeatureConfig(() -> registryManager.get(Registry.STRUCTURE_POOL_KEY).get(START_POOL), Stonevaults.CONFIG.MAGETOWER.SIZE);
-
-            // Spawn structure.
-            StructurePoolBasedGenerator.generate(registryManager,
-                    structurePoolFeatureConfig,
-                    PoolStructurePiece::new, chunkGenerator, manager, blockPos, this, this.random, false, true, world);
-
-            this.children.forEach(structurePiece -> {
-                structurePiece.translate(0, 1, 0);
-            });
-
-            this.setBoundingBoxFromChildren();
-        }
+        return StructurePoolBasedGenerator.generate(context, PoolStructurePiece::new, blockPos, false, true);
     }
 }

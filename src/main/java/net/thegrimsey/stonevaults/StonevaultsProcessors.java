@@ -8,9 +8,9 @@ import net.thegrimsey.stonevaults.structures.processors.NoWaterProcessor;
 import net.thegrimsey.stonevaults.structures.processors.VineWallProcessor;
 
 public class StonevaultsProcessors {
-    public static StructureProcessorType<VineWallProcessor> VINEWALL_PROCESSOR = () -> VineWallProcessor.CODEC;
-    public static StructureProcessorType<NoWaterProcessor> NOWATER_PROCESSOR = () -> NoWaterProcessor.CODEC;
-    public static StructureProcessorType<LecternProcessor> LECTERN_PROCESSOR = () -> LecternProcessor.CODEC;
+    public static final StructureProcessorType<VineWallProcessor> VINEWALL_PROCESSOR = () -> VineWallProcessor.CODEC;
+    public static final StructureProcessorType<NoWaterProcessor> NOWATER_PROCESSOR = () -> NoWaterProcessor.CODEC;
+    public static final StructureProcessorType<LecternProcessor> LECTERN_PROCESSOR = () -> LecternProcessor.CODEC;
 
     public static void registerProcessors() {
         Registry.register(Registry.STRUCTURE_PROCESSOR, new Identifier(Stonevaults.MODID, "vinewall_processor"), VINEWALL_PROCESSOR);

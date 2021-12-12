@@ -1,81 +1,38 @@
 package net.thegrimsey.stonevaults.structures;
 
 import com.mojang.serialization.Codec;
-import net.minecraft.structure.MarginedStructureStart;
 import net.minecraft.structure.PoolStructurePiece;
-import net.minecraft.structure.StructureManager;
+import net.minecraft.structure.StructureGeneratorFactory;
+import net.minecraft.structure.StructurePiecesGenerator;
 import net.minecraft.structure.pool.StructurePoolBasedGenerator;
 import net.minecraft.util.Identifier;
 import net.minecraft.util.math.BlockPos;
-import net.minecraft.util.math.ChunkPos;
-import net.minecraft.util.registry.DynamicRegistryManager;
 import net.minecraft.util.registry.Registry;
-import net.minecraft.world.HeightLimitView;
-import net.minecraft.world.Heightmap;
-import net.minecraft.world.biome.Biome;
-import net.minecraft.world.biome.source.BiomeSource;
-import net.minecraft.world.gen.ChunkRandom;
-import net.minecraft.world.gen.chunk.ChunkGenerator;
-import net.minecraft.world.gen.feature.DefaultFeatureConfig;
 import net.minecraft.world.gen.feature.StructureFeature;
 import net.minecraft.world.gen.feature.StructurePoolFeatureConfig;
 import net.thegrimsey.stonevaults.Stonevaults;
+import net.thegrimsey.stonevaults.mixin.StructurePoolFeatureConfigAccessor;
 
-public class DungeonStructure extends StructureFeature<DefaultFeatureConfig> {
-    public static Identifier START_POOL = new Identifier(Stonevaults.MODID, "startpool_dungeon");
+import java.util.Optional;
+
+public class DungeonStructure extends StructureFeature<StructurePoolFeatureConfig> {
+    public static final Identifier START_POOL = new Identifier(Stonevaults.MODID, "startpool_dungeon");
     public static Identifier START_POOL_LONG = new Identifier(Stonevaults.MODID, "startpool_dungeon_long");
 
-    public DungeonStructure(Codec<DefaultFeatureConfig> codec) {
-        super(codec);
+    public DungeonStructure(Codec<StructurePoolFeatureConfig> codec) {
+        super(codec, DungeonStructure::createPiecesGenerator);
     }
 
-    @Override
-    public StructureStartFactory<DefaultFeatureConfig> getStructureStartFactory() {
-        return DungeonStructure.Start::new;
-    }
+    public static Optional<StructurePiecesGenerator<StructurePoolFeatureConfig>> createPiecesGenerator(StructureGeneratorFactory.Context<StructurePoolFeatureConfig> context) {
+        int x = context.chunkPos().x << 4;
+        int z = context.chunkPos().z << 4;
 
-    @Override
-    protected boolean shouldStartAt(ChunkGenerator chunkGenerator, BiomeSource biomeSource, long worldSeed, ChunkRandom random, ChunkPos pos, Biome biome, ChunkPos chunkPos, DefaultFeatureConfig config, HeightLimitView world) {
-        int terrainHeight = chunkGenerator.getHeightOnGround(pos.x << 4, pos.z << 4, Heightmap.Type.WORLD_SURFACE_WG, world);
-        int maxHeight = chunkGenerator.getSeaLevel() + 32;
+        // Position, we don't care about Y as we will just be placed on top on the terrain.
+        BlockPos blockPos = new BlockPos(x, 0, z);
 
-        if (terrainHeight > maxHeight)
-            return false;
+        ((StructurePoolFeatureConfigAccessor)context.config()).setStructures(() -> context.registryManager().get(Registry.STRUCTURE_POOL_KEY).get(START_POOL));
+        ((StructurePoolFeatureConfigAccessor)context.config()).setSize(Stonevaults.CONFIG.DUNGEON.SIZE);
 
-        return super.shouldStartAt(chunkGenerator, biomeSource, worldSeed, random, pos, biome, chunkPos, config, world);
-    }
-
-    public static class Start extends MarginedStructureStart<DefaultFeatureConfig> {
-        private static StructurePoolFeatureConfig structurePoolFeatureConfig = null;
-        private static StructurePoolFeatureConfig longStructurePoolFeatureConfig = null;
-
-        public Start(StructureFeature<DefaultFeatureConfig> structureIn, ChunkPos pos, int referenceIn, long seedIn) {
-            super(structureIn, pos, referenceIn, seedIn);
-        }
-
-        @Override
-        public void init(DynamicRegistryManager registryManager, ChunkGenerator chunkGenerator, StructureManager manager, ChunkPos pos, Biome biome, DefaultFeatureConfig config, HeightLimitView world) {
-            // Position, we don't care about Y as we will just be placed on top on the terrain.
-            BlockPos blockPos = new BlockPos(pos.x << 4, 0, pos.z << 4);
-            boolean highDungeon = chunkGenerator.getHeightInGround(blockPos.getX(), blockPos.getZ(), Heightmap.Type.WORLD_SURFACE, world) >= (chunkGenerator.getSeaLevel() + 12);
-
-            // Initialize structurePoolFeatureConfig if it is null. Doing it everytime we spawn creates garbage so we just make one.
-            if (structurePoolFeatureConfig == null)
-                structurePoolFeatureConfig = new StructurePoolFeatureConfig(() -> registryManager.get(Registry.STRUCTURE_POOL_KEY).get(START_POOL), Stonevaults.CONFIG.DUNGEON.SIZE);
-
-            if (longStructurePoolFeatureConfig == null)
-                longStructurePoolFeatureConfig = new StructurePoolFeatureConfig(() -> registryManager.get(Registry.STRUCTURE_POOL_KEY).get(START_POOL_LONG), Stonevaults.CONFIG.DUNGEON.SIZE);
-
-            // Spawn structure.
-            StructurePoolBasedGenerator.generate(registryManager,
-                    highDungeon ? longStructurePoolFeatureConfig : structurePoolFeatureConfig,
-                    PoolStructurePiece::new, chunkGenerator, manager, blockPos, this, this.random, false, true, world);
-
-            this.children.forEach(structurePiece -> {
-                structurePiece.translate(0, 1, 0);
-            });
-
-            this.setBoundingBoxFromChildren();
-        }
+        return StructurePoolBasedGenerator.generate(context, PoolStructurePiece::new, blockPos, false, true);
     }
 }

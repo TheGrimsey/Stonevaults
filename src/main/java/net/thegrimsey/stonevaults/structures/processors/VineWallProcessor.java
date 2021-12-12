@@ -13,7 +13,6 @@ import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.math.Direction;
 import net.minecraft.world.WorldView;
 import net.minecraft.world.chunk.Chunk;
-import net.minecraft.world.gen.random.ChunkRandom;
 import net.thegrimsey.stonevaults.StonevaultsProcessors;
 import org.jetbrains.annotations.Nullable;
 
@@ -32,7 +31,7 @@ public class VineWallProcessor extends StructureProcessor {
     @Override
     public Structure.StructureBlockInfo process(WorldView world, BlockPos pos, BlockPos pivot, Structure.StructureBlockInfo structureBlockInfoLocal, Structure.StructureBlockInfo structureBlockInfoWorld, StructurePlacementData data) {
         if (structureBlockInfoWorld.state.isAir()) {
-            Random chunkRandom = new ChunkRandom();
+            Random chunkRandom = data.getRandom(pos);
             chunkRandom.setSeed(structureBlockInfoWorld.pos.asLong() * structureBlockInfoWorld.pos.getY());
             if (chunkRandom.nextFloat() < probability) {
                 // This is the position we place a vine in.
@@ -56,7 +55,6 @@ public class VineWallProcessor extends StructureProcessor {
                 }
             }
         }
-
 
         return structureBlockInfoWorld;
     }
